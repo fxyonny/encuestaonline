@@ -1,0 +1,320 @@
+:root {
+    --primary-red: #ff3131;
+    --primary-yellow: #ffd700;
+    --bg-black: #0a0a0a;
+    --card-bg: rgba(26, 26, 26, 0.8);
+    --text-white: #f5f5f5;
+    --text-gray: #a0a0a0;
+    --border-color: rgba(255, 49, 49, 0.2);
+    --font-main: 'Outfit', sans-serif;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-glow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 49, 49, 0.15) 0%, rgba(255, 215, 0, 0.05) 50%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    margin: 2rem auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.logo-icon {
+    background: var(--primary-red);
+    color: var(--bg-black);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 49, 49, 0.4);
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.highlight {
+    color: var(--primary-yellow);
+}
+
+.subtitle {
+    color: var(--text-gray);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.survey-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.grid-full {
+    grid-column: 1 / -1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+label {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-yellow);
+}
+
+.helper-text {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    margin-top: -0.5rem;
+}
+
+input[type="text"],
+textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    color: var(--text-white);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    background: rgba(255, 49, 49, 0.05);
+    box-shadow: 0 0 15px rgba(255, 49, 49, 0.2);
+}
+
+/* Rating Scale Style */
+.rating-scale {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+
+.rating-scale input[type="radio"] {
+    display: none;
+}
+
+.rating-scale label {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-gray);
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-main);
+    font-weight: 600;
+}
+
+.rating-scale input[type="radio"]:checked + label {
+    background: var(--primary-red);
+    color: var(--bg-black);
+    border-color: var(--primary-red);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 49, 49, 0.3);
+}
+
+.rating-scale label:hover {
+    background: rgba(255, 49, 49, 0.1);
+    border-color: rgba(255, 49, 49, 0.4);
+}
+
+.form-actions {
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    width: 100%;
+    background: var(--primary-red);
+    color: var(--bg-black);
+    border: none;
+    padding: 1.2rem;
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background: var(--primary-yellow);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+    transform: scale(1.02);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Success Message */
+#success-message {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--card-bg);
+    border-radius: 24px;
+    border: 1px solid var(--primary-yellow);
+    animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-yellow);
+    color: var(--bg-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 0 auto 2rem;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+}
+
+#success-message h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.btn-secondary {
+    margin-top: 2rem;
+    background: transparent;
+    border: 1px solid var(--text-gray);
+    color: var(--text-gray);
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-white);
+    color: var(--text-white);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .survey-card {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfacción | Antigravity Course</title>
+    <meta name="description" content="Encuesta de satisfacción para estudiantes del curso de Antigravity. Comparte tu opinión y ayúdanos a mejorar.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-glow"></div>
+    <main class="container">
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-icon">A</div>
+                <h1 class="title">Antigravity <span class="highlight">Survey</span></h1>
+            </div>
+            <p class="subtitle">Tu feedback impulsa la evolución tecnológica. Ayúdanos a mejorar tu experiencia de aprendizaje.</p>
+        </header>
+
+        <form id="survey-form" class="survey-card">
+            <div class="form-group grid-full">
+                <label for="id_estudiante">ID de Estudiante</label>
+                <input type="text" id="id_estudiante" name="id_estudiante" placeholder="Escribe tu ID de alumno..." required>
+            </div>
+
+            <div class="form-group">
+                <label>Nivel de Satisfacción</label>
+                <p class="helper-text">Muy insatisfecho a muy satisfecho (1-5)</p>
+                <div class="rating-scale">
+                    <input type="radio" name="nivel_satisfaccion" value="1" id="sat-1" required>
+                    <label for="sat-1">1</label>
+                    <input type="radio" name="nivel_satisfaccion" value="2" id="sat-2">
+                    <label for="sat-2">2</label>
+                    <input type="radio" name="nivel_satisfaccion" value="3" id="sat-3">
+                    <label for="sat-3">3</label>
+                    <input type="radio" name="nivel_satisfaccion" value="4" id="sat-4">
+                    <label for="sat-4">4</label>
+                    <input type="radio" name="nivel_satisfaccion" value="5" id="sat-5">
+                    <label for="sat-5">5</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Claridad del Contenido</label>
+                <p class="helper-text">Muy poco claro a muy claro (1-5)</p>
+                <div class="rating-scale">
+                    <input type="radio" name="claridad_contenido" value="1" id="cla-1" required>
+                    <label for="cla-1">1</label>
+                    <input type="radio" name="claridad_contenido" value="2" id="cla-2">
+                    <label for="cla-2">2</label>
+                    <input type="radio" name="claridad_contenido" value="3" id="cla-3">
+                    <label for="cla-3">3</label>
+                    <input type="radio" name="claridad_contenido" value="4" id="cla-4">
+                    <label for="cla-4">4</label>
+                    <input type="radio" name="claridad_contenido" value="5" id="cla-5">
+                    <label for="cla-5">5</label>
+                </div>
+            </div>
+
+            <div class="form-group grid-full">
+                <label>Aplicabilidad Práctica</label>
+                <p class="helper-text">Nada aplicable a muy aplicable (1-5)</p>
+                <div class="rating-scale full-width">
+                    <input type="radio" name="aplicabilidad_practica" value="1" id="app-1" required>
+                    <label for="app-1">1</label>
+                    <input type="radio" name="aplicabilidad_practica" value="2" id="app-2">
+                    <label for="app-2">2</label>
+                    <input type="radio" name="aplicabilidad_practica" value="3" id="app-3">
+                    <label for="app-3">3</label>
+                    <input type="radio" name="aplicabilidad_practica" value="4" id="app-4">
+                    <label for="app-4">4</label>
+                    <input type="radio" name="aplicabilidad_practica" value="5" id="app-5">
+                    <label for="app-5">5</label>
+                </div>
+            </div>
+
+            <div class="form-group grid-full">
+                <label for="comentarios_adicionales">Comentarios Adicionales</label>
+                <textarea id="comentarios_adicionales" name="comentarios_adicionales" placeholder="¿Tienes algo más que decirnos?" rows="4"></textarea>
+            </div>
+
+            <div class="form-actions grid-full">
+                <button type="submit" id="submit-btn" class="btn-primary">Enviar Encuesta</button>
+            </div>
+        </form>
+
+        <div id="success-message" class="hidden">
+            <div class="success-content">
+                <div class="success-icon">✓</div>
+                <h2>¡Gracias, <span id="user-display"></span>!</h2>
+                <p>Tu opinión ha sido registrada con éxito en el sistema Antigravity.</p>
+                <button onclick="location.reload()" class="btn-secondary">Enviar otra respuesta</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
